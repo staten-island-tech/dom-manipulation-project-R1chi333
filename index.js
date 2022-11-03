@@ -1,9 +1,14 @@
 const DOMSelectors = {
-  sectionA: document.getElementById("sectionA"),
-  input: document.querySelector("#input"),
   button: document.getElementById("btn"),
+  container: document.getElementById("container"),
+  input: document.querySelector(`#input`),
 };
 
 DOMSelectors.button.addEventListener("click", function () {
-  DOMSelectors.sectionA.insertAdjacentHTML("beforebegin", `<p>${input}</p>`);
+  let input = DOMSelectors.input.value;
+  DOMSelectors.container.insertAdjacentHTML("afterend", `<p>${input}</p>`);
+});
+
+DOMSelectors.button.addEventListener("click", function () {
+  const test = Object.create(test);
 });

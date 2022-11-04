@@ -2,7 +2,63 @@ html, body, *{
     padding: 0;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Poor Story', cursive;
 }
 #container {
+    border-radius: 25px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 9px;
+    border-color: #ffe4cc;
+    position: relative;
     text-align: center;
+    margin-top: 1%;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-shadow: 10px 10px #dec5af;
+}
+body {
+    background-image: url(media/wallpaper.jpg);
+    background-size: 20%;
+}
+#text {
+    font-size: 120%;
+}
+#container2 {
+    display: flex;
+}
+#targetList {
+    margin-top: 10%;
+}
+#list {
+    list-style: none;
+    margin-top: 2%;
+}
+#container3 {
+    text-align: center;
+    border-style: solid;
+    border-width: 9px;
+    border-color: #ffe4cc;
+    width: 20%;
+    height: 75%;
+    background-color: white;
+    border-radius: 25px;
+    margin-top: 3%;
+    margin-left: 3%;
+    box-shadow: 10px 10px #dec5af;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+#game {
+    border-style: solid;
+    border-width: 9px;
+    border-color: #ffe4cc;
+    width: 70%;
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 3%;
+    box-shadow: 10px 10px #dec5af;
+    margin-top: 3%;
+    padding-bottom: 35%;
 }

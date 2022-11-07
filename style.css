@@ -62,3 +62,6 @@ body {
     margin-top: 3%;
     padding-bottom: 35%;
 }
+#target{
+transition: all 0.2s;
+}

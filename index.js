@@ -11,6 +11,12 @@ const DOMSelectors = {
 };
 
 let score = 0;
+function getrandomnum(min, max) {
+  let step1 = max - min + 1;
+  let step2 = Math.random() * step1;
+  let result = Math.floor(step2) + min;
+  return result;
+}
 
 DOMSelectors.button.addEventListener("click", function () {
   let input = DOMSelectors.input.value;
@@ -39,11 +45,11 @@ DOMSelectors.button.addEventListener("click", function () {
       );
       DOMSelectors.game.insertAdjacentHTML(
         "beforebegin",
-        `<img style = "position:fixed; width:3%;" id="target" src="media/${input}.gif" alt="target">`
+        `<img style = "position:absolute; width:3%;" id="target" src="media/${input}.gif" alt="target">`
       );
       DOMSelectors.score.insertAdjacentHTML(
         "afterend",
-        `<p id="stop" style = "position:absolute; margin-top:25%; margin-left:17%; border-style:solid; border-width:9px;
+        `<p id="stop" style = "position:fixed; top:85%; left:17%; border-style:solid; border-width:9px;
     border-color: #ffe4cc; padding:10px; box-shadow: 5px 5px #dec5af; border-radius: 25px; background-color: white;">END</p>`
       );
       const targets = {
@@ -57,6 +63,10 @@ DOMSelectors.button.addEventListener("click", function () {
         score++;
         console.log(score);
         score2.textContent = `score: ${score}`;
+        let top = getrandomnum(18, 80);
+        let left = getrandomnum(27, 92);
+        document.getElementById("target").style.top = `${top}%`;
+        document.getElementById("target").style.left = `${left}%`;
       });
       end.addEventListener("click", function () {
         targets.target.remove();

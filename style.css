@@ -3,6 +3,7 @@ html, body, *{
     margin: 0px;
     box-sizing: border-box;
     font-family: 'Poor Story', cursive;
+    cursor: crosshair;
 }
 #container {
     border-radius: 25px;
@@ -63,5 +64,33 @@ body {
     padding-bottom: 35%;
 }
 #target{
-transition: all 0.2s;
+transition: all 0.1s;
+}
+.modes{
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #ffe4cc;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+}
+#mode{
+    position: absolute;
+    text-align: center;
+}
+#casual{
+    top: 20%;
+    left: 3%;
+}
+#timed{
+    top: 20%;
+    left: 10%;
+}
+#timer{
+    margin-top: 10%;
+}
+#score{
+    margin-top: 10%;
 }

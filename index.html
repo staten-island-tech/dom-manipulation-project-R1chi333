@@ -10,18 +10,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio id="pop" src="media/pop.m4a"></audio>
+    <audio id="select" src="media/select.m4a"></audio>
     <div id="container">
         <h1 id="text">ONE PIECE AIM LABS</h1>
         <input type="text" id="input" placeholder="target"/>
         <button type="button" id="btn">GENERATE</button>
+        <div class="modes" id="timed">
+            <p>TIMED</p>
+        </div>
+        <div class="modes" id="casual">
+            <p>CASUAL</p>
+        </div>
     </div>
     <div id="container2">
         <div id="container3">
+            <div id="modetitle">
+                <h2>mode</h2>
+                <p>mode: casual</p>
+            </div>
             <div id="score">
                 <h2 id="textinsidescore">score</h2>
             </div>
             <div id="targetList">
-                <h3>Target List</h3>
+                <h2>target list</h2>
                 <ul id="list">
                     <li>luffyCat</li>
                     <li>zoro</li>

@@ -94,3 +94,20 @@ transition: all 0.1s;
 #score{
     margin-top: 10%;
 }
+#c{
+    margin-top: 3%;
+    font-size: 80%;
+}
+#music{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    text-align: center;
+    border-style: solid;
+    border-width: 9px;
+    border-color: #ffe4cc;
+    background-color: white;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

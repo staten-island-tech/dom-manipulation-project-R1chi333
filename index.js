@@ -11,9 +11,11 @@ const DOMSelectors = {
   casual: document.getElementById("casual"),
   timed: document.getElementById("timed"),
   targetList: document.getElementById("targetList"),
-  modetitle: document.getElementById("modetitle")
+  modetitle: document.getElementById("modetitle"),
+  modeinsert: document.getElementById("modeinsert"),
+  music: document.getElementById("music")
 };
-
+const background = document.getElementById("background")
 let seconds = 60;
 function countdown() {
   countdownnum.textContent = `${seconds}`;
@@ -27,8 +29,14 @@ function times2() {
   return timer = 1
 }
 let select = document.getElementById("select")
+DOMSelectors.music.addEventListener("click", function() {
+  document.getElementById("music").style.scale = "80%"
+  select.play();
+  background.play();
+})
 DOMSelectors.casual.addEventListener("click", function() {
-  mode = 1;
+  mode = "casual";
+  DOMSelectors.modeinsert.textContent = `mode: ${mode}`;
   document.getElementById("casual").style.scale = "80%"
   document.getElementById("timed").style.scale = "100%"
   select.play();
@@ -41,13 +49,14 @@ DOMSelectors.casual.addEventListener("click", function() {
   }
 })
 DOMSelectors.timed.addEventListener("click", function() {
-  mode = 2;
+  mode = "timed";
+  DOMSelectors.modeinsert.textContent = `mode: ${mode}`;
   select.play();
   document.getElementById("timed").style.scale = "80%"
   document.getElementById("casual").style.scale = "100%"
   if (timer === 1) {
-    DOMSelectors.targetList.insertAdjacentHTML("afterend", `<p id="countdownnum">60</p>`)
-    DOMSelectors.targetList.insertAdjacentHTML("afterend", `<h2 id="timer">Timer</h2>`)
+    DOMSelectors.targetList.insertAdjacentHTML("beforebegin", `<h2 id="timer">timer</h2>`)
+    DOMSelectors.targetList.insertAdjacentHTML("beforebegin", `<p id="countdownnum">60</p>`)
     times();
   }
 })
@@ -68,7 +77,7 @@ DOMSelectors.button.addEventListener("click", function () {
   ) {
     function startgame() {
       if (played === 0) {
-        if (mode === 2) {
+        if (mode === "timed") {
           b = setInterval(countdown, 1000);
           countdown();
         };
@@ -85,15 +94,11 @@ DOMSelectors.button.addEventListener("click", function () {
         DOMSelectors.input.value = null;
         DOMSelectors.textinsidescore.insertAdjacentHTML(
           "afterend",
-          `<p id="score2">score: ${score}</p>`
-        );
-        DOMSelectors.textinsidescore.insertAdjacentHTML(
-          "afterend",
           `<p>target: ${input}</p>`
         );
-        DOMSelectors.textinsidescore.insertAdjacentHTML(
-          "afterend",
-          `<p style="margin-bottom:3%">CLICK THE TARGET TO START</p>`
+        DOMSelectors.modetitle.insertAdjacentHTML(
+          "beforebegin",
+          `<h2 id="c" style="margin-bottom:3%">CLICK THE TARGET TO START</h2>`
         );
         DOMSelectors.game.insertAdjacentHTML(
           "beforebegin",

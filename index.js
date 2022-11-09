@@ -13,32 +13,44 @@ const DOMSelectors = {
   targetList: document.getElementById("targetList"),
   modetitle: document.getElementById("modetitle"),
   modeinsert: document.getElementById("modeinsert"),
-  music: document.getElementById("music")
+  music: document.getElementById("music"),
 };
-const background = document.getElementById("background")
+let mode = "casual";
+const background = document.getElementById("background");
+background.loop = true;
+let playing = false;
+DOMSelectors.music.addEventListener("click", function () {
+  let playing = false;
+  if (playing === false) {
+    document.getElementById("music").style.scale = "80%";
+    select.play();
+    background.play();
+    return (playing = true);
+  } else {
+    background.pause();
+    document.getElementById("music").style.scale = "100%";
+    select.play();
+    return (playing = false);
+  }
+});
 let seconds = 60;
 function countdown() {
   countdownnum.textContent = `${seconds}`;
   return seconds--;
-};
-let timer = 1
+}
+let timer = 1;
 function times() {
-  return timer = 2
+  return (timer = 2);
 }
 function times2() {
-  return timer = 1
+  return (timer = 1);
 }
-let select = document.getElementById("select")
-DOMSelectors.music.addEventListener("click", function() {
-  document.getElementById("music").style.scale = "80%"
-  select.play();
-  background.play();
-})
-DOMSelectors.casual.addEventListener("click", function() {
+let select = document.getElementById("select");
+DOMSelectors.casual.addEventListener("click", function () {
   mode = "casual";
   DOMSelectors.modeinsert.textContent = `mode: ${mode}`;
-  document.getElementById("casual").style.scale = "80%"
-  document.getElementById("timed").style.scale = "100%"
+  document.getElementById("casual").style.scale = "80%";
+  document.getElementById("timed").style.scale = "100%";
   select.play();
   if (timer === 2) {
     timerr = document.getElementById("timer");
@@ -47,19 +59,25 @@ DOMSelectors.casual.addEventListener("click", function() {
     countdownnum.remove();
     times2();
   }
-})
-DOMSelectors.timed.addEventListener("click", function() {
+});
+DOMSelectors.timed.addEventListener("click", function () {
   mode = "timed";
   DOMSelectors.modeinsert.textContent = `mode: ${mode}`;
   select.play();
-  document.getElementById("timed").style.scale = "80%"
-  document.getElementById("casual").style.scale = "100%"
+  document.getElementById("timed").style.scale = "80%";
+  document.getElementById("casual").style.scale = "100%";
   if (timer === 1) {
-    DOMSelectors.targetList.insertAdjacentHTML("beforebegin", `<h2 id="timer">timer</h2>`)
-    DOMSelectors.targetList.insertAdjacentHTML("beforebegin", `<p id="countdownnum">60</p>`)
+    DOMSelectors.targetList.insertAdjacentHTML(
+      "beforebegin",
+      `<h2 id="timer">timer</h2>`
+    );
+    DOMSelectors.targetList.insertAdjacentHTML(
+      "beforebegin",
+      `<p id="countdownnum">60</p>`
+    );
     times();
   }
-})
+});
 let score = 0;
 function getrandomnum(min, max) {
   let step1 = max - min + 1;
@@ -80,10 +98,10 @@ DOMSelectors.button.addEventListener("click", function () {
         if (mode === "timed") {
           b = setInterval(countdown, 1000);
           countdown();
-        };
-        function a(){
-          a = setInterval(a, 1)
-          if(seconds < 0) {
+        }
+        function a() {
+          a = setInterval(a, 1);
+          if (seconds < 0) {
             clearInterval(b);
             targets.target.remove();
           }
@@ -128,7 +146,7 @@ DOMSelectors.button.addEventListener("click", function () {
           location.reload();
         });
       }
-      }
+    }
     startgame();
   }
 });

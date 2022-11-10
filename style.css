@@ -64,7 +64,7 @@ body {
     padding-bottom: 35%;
 }
 #target{
-transition: all .3s;
+    transition: all .2s;
 }
 .modes{
     text-align: center;

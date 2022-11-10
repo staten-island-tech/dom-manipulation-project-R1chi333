@@ -20,7 +20,6 @@ const background = document.getElementById("background");
 background.loop = true;
 let playing = false;
 DOMSelectors.music.addEventListener("click", function () {
-  let playing = false;
   if (playing === false) {
     document.getElementById("music").style.scale = "80%";
     select.play();
